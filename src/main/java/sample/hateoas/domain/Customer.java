@@ -19,6 +19,7 @@ package sample.hateoas.domain;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import io.swagger.annotations.ApiModelProperty;
@@ -27,7 +28,7 @@ import io.swagger.annotations.ApiModelProperty;
 public class Customer {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@ApiModelProperty(readOnly=true, hidden=true)
 	private Long id;
 
